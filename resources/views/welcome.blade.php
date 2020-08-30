@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/todo/create">create task</a>
+                    <a href="/todos/create">create task</a>
                 </div>
             </div>
         </div>

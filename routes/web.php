@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/todo/create', 'TodoController@create');
-Route::post('/todo/store', 'TodoController@store');
+Route::get('/todos/create', 'TodoController@create');
+Route::post('/todos/store', 'TodoController@store');
