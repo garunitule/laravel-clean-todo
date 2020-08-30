@@ -4,10 +4,6 @@ namespace packages\Domain\Domain\Todo;
 
 class Todo {
     /**
-     * @var int
-     */
-    private $id;
-    /**
      * @var string
      */
     private $title;
@@ -20,20 +16,11 @@ class Todo {
      */
     private $completed;
 
-    public function __construct(int $id, string $title, DateTime $limit, bool $completed)
+    public function __construct(string $title, DateTime $limit, bool $completed)
     {
-        $this->id = $id;
         $this->title = $title;
         $this->limit = $limit;
         $this->completed = $completed;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
     }
 
     /**
