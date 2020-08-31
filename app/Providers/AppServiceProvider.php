@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // パターンごとにメソッドを作っておけばDIを制御できる。
+        // 例えば、テスト用と本番用、MySQl版とPostgreSQL版など
+        $this->registerForInMemory();
     }
 
     /**
@@ -24,5 +26,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+    }
+
+    private function registerForInMemory()
+    {
+        $this->app->bind(
+            \packages\UseCase\Todo\Create\TodoCreateUseCaseInterface::class,
+            \packages\Domain\Application\Todo\TodoCreateInteractor::class
+        );
     }
 }

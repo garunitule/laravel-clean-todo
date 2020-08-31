@@ -1,6 +1,9 @@
 <?php
 
-namespace packages\Domain\Application\Todo\TodoCreateInteractor;
+namespace packages\Domain\Application\Todo;
+
+use packages\UseCase\Todo\Create\TodoCreateUseCaseInterface;
+use packages\UseCase\Todo\Create\TodoCreateRequest;
 
 class TodoCreateInteractor implements TodoCreateUseCaseInterface
 {
