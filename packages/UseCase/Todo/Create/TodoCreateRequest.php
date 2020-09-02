@@ -16,7 +16,7 @@ class TodoCreateRequest {
      */
     private $completed;
 
-    public function __construct(string $title, DateTime $limit, bool $completed)
+    public function __construct(string $title, \DateTime $limit, bool $completed)
     {
         $this->title = $title;
         $this->limit = $limit;
@@ -32,9 +32,9 @@ class TodoCreateRequest {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
-    public function getLimit(): DateTime
+    public function getLimit(): \DateTime
     {
         return $this->limit;
     }

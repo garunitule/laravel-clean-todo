@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use packages\UseCase\Todo\Create\TodoCreateUseCaseInterface;
-use App\Http\Models\Todo\Create\ToDoCreateViewModel;
+use App\Http\Models\Todo\Create\TodoCreateViewModel;
+use packages\UseCase\Todo\Create\TodoCreateRequest;
 
 class TodoController extends Controller
 {
@@ -17,10 +18,12 @@ class TodoController extends Controller
     {
         $title = $request->input('title');
         $limit = $request->input('limit');
+        $limit = new \DateTime($limit);
         $completed = $request->input('completed');
-        $response = $interactor->handle($title, $limit, $completed); //$interactorが使用できる形に変換
+        $createRequest = new TodoCreateRequest($title, $limit, $completed);
+        $response = $interactor->handle($createRequest); //$interactorが使用できる形に変換
 
-        $viewmodel = new TodoCreateViewModel($response->title, $response->limit, $response->completed); //view用にデータを変換
-        return view('todos.index', compact('viewmodel'));
+        $viewModel = new TodoCreateViewModel($response->getTitle(), $response->getLimit(), $response->getCompleted()); //view用にデータを変換
+        return view('todos.index', compact('viewModel'));
     }
 }

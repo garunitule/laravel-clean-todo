@@ -1,14 +1,14 @@
 <?php
 
-namespace packages\Domain\Domain\Todo;
+namespace packages\UseCase\Todo\Create;
 
-class Todo {
+class TodoCreateResponse {
     /**
      * @var string
      */
     private $title;
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     private $limit;
     /**

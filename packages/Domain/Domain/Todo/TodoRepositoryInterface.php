@@ -2,7 +2,7 @@
 
 namespace packages\Domain\Domain\Todo;
 
-interface TodoRepojitoryInterface
+interface TodoRepositoryInterface
 {
     public function save(Todo $todo);
 }

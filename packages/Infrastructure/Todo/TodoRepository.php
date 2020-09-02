@@ -2,10 +2,11 @@
 
 namespace packages\Infrastructure\Todo;
 
-use packages\Domain\Domain\Todo\TodoRepojitoryInterface;
+use packages\Domain\Domain\Todo\TodoRepositoryInterface;
 use packages\Domain\Domain\Todo\Todo;
+use Illuminate\Support\Facades\DB;
 
-class TodoRepojitory implements TodoRepojitoryInterface
+class TodoRepository implements TodoRepositoryInterface
 {
     public function save(Todo $todo)
     {

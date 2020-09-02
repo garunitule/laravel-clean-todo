@@ -30,6 +30,11 @@ class AppServiceProvider extends ServiceProvider
 
     private function registerForInMemory()
     {
+        $this->app->singleton(
+            \packages\Domain\Domain\Todo\TodoRepositoryInterface::class,
+            \packages\Infrastructure\Todo\TodoRepository::class
+        );
+
         $this->app->bind(
             \packages\UseCase\Todo\Create\TodoCreateUseCaseInterface::class,
             \packages\Domain\Application\Todo\TodoCreateInteractor::class

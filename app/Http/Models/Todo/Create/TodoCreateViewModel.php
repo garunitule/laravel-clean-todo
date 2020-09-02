@@ -2,13 +2,13 @@
 
 namespace App\Http\Models\Todo\Create;
 
-class TodoCreateviewModel
+class TodoCreateViewModel
 {
     private $title;
     private $limit;
     private $completed;
 
-    public function __construct(string $title, DateTime $limit, bool $completed)
+    public function __construct(string $title, \DateTime $limit, bool $completed)
     {
         $this->title = $title;
         $this->limit = $limit;

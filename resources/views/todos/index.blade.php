@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-    @foreach ($viewModel->todos as $todo)
-        <p>title: {{$todo->title}}, limit: {{$todo->limit}}, completed: {{$todo->completed})</p>
-    @endforeach
+    <p>title: {{$viewModel->getTitle()}}, limit: {{$viewModel->getLimit()->format('Y-m-d')}}, completed: {{$viewModel->getCompleted()}}</p>
 
     <p>TODO作成リクエスト</p>
     <form action="user/create" method="post">
